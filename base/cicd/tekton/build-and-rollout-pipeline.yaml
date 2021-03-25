@@ -84,7 +84,7 @@ spec:
           value: "$(params.app-name)"
         - name: NAMESPACE
           value: "petclinic-dev"
-    - name: tag-test
+    - name: tag-prod
       taskRef:
         name: openshift-client
         kind: ClusterTask
@@ -93,12 +93,12 @@ spec:
       params:
         - name: ARGS
           value: ["tag", "$(params.app-name):dev", "$(params.app-name):prod"]
-    - name: rollout-test
+    - name: rollout-prod
       taskRef:
         name: rollout-restart
         kind: Task
       runAfter:
-        - tag-test
+        - tag-prod
       params:
         - name: APP_NAME
           value: "$(params.app-name)"

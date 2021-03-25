@@ -42,8 +42,8 @@ spec:
             secretKeyRef:
               key: database-password
               name: petclinicdb
-        image: quay.io/pittar/petclinic:latest
-        imagePullPolicy: IfNotPresent
+        image: petclinic:latest
+        imagePullPolicy: Always
         name: petclinic
         ports:
         - containerPort: 8080
