@@ -18,7 +18,7 @@ spec:
   workspaces:
     - name: shared-workspace
       persistentVolumeClaim:
-        claimName: decisions-workspace
+        claimName: workspace
     - name: maven-settings-cm
       configMap:
         name: maven-settings-cm
