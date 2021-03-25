@@ -6,3 +6,4 @@ namespace: argocd
 resources:
   - namespace.yaml
   - argocd-instance.yaml
+  - cluster-role-binding.yaml
