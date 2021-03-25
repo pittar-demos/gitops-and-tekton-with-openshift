@@ -1,0 +1,35 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: petclinic-cicd
+
+# Commont Tekton functionality.
+bases:
+  - ../../base/cicd/builds
+  - ../../base/cicd/tekton
+
+# Nexus secret (username and password).
+resources:
+  - namespace.yaml
+  - nexus-secret.yaml
+  - cicd-image-puller-rolebinding.yaml
+
+# Generator options.
+generatorOptions:
+  labels:
+    app: maven-settings
+  disableNameSuffixHash: true
+
+# Create a ConfigMap from custom settings.xml file.
+configMapGenerator:
+  - name: maven-settings-cm
+    files:
+      - settings.xml
+
+patchesJson6902:
+  - target:
+      group: rbac.authorization.k8s.io
+      version: v1
+      kind: RoleBinding
+      name: cicd-image-puller
+    path: cicd-image-puller-rolebinding-patch.yaml

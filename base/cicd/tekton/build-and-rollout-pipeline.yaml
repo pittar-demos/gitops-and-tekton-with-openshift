@@ -1,0 +1,106 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: build-and-rollout
+spec:
+  workspaces:
+    - name: shared-workspace
+    - name: maven-settings-cm
+  params:
+    - name: app-name
+      type: string
+      description: name of the deployment to be patched
+    - name: git-url
+      type: string
+      description: url of the git repo for the code of deployment
+    - name: git-revision
+      type: string
+      description: revision to be used from repo of the code for deployment
+      default: "master"
+  tasks:
+    - name: fetch-repository
+      taskRef:
+        name: git-clone
+        kind: ClusterTask
+      workspaces:
+        - name: output
+          workspace: shared-workspace
+      params:
+        - name: url
+          value: $(params.git-url)
+        - name: subdirectory
+          value: ""
+        - name: deleteExisting
+          value: "true"
+        - name: revision
+          value: $(params.git-revision)
+    - name: mvn-build
+      taskRef:
+        name: maven
+        kind: Task
+      runAfter:
+        - fetch-repository 
+      params:
+        - name: GOALS
+          value: ["package", "-DskipTests"]
+        - name: MAVEN_REPO_CONFIG_SECRET
+          value: nexus-secret
+      workspaces:
+        - name: source
+          workspace: shared-workspace
+        - name: maven-settings
+          workspace: maven-settings-cm
+    - name: s2i-build
+      taskRef:
+        name: binary-build
+        kind: Task
+      runAfter:
+        - mvn-build 
+      params:
+        - name: BUILD_NAME
+          value: "$(params.app-name)-binary-build"
+        - name: BINARY_PATH
+          value: "/target/app-runner.jar"
+      workspaces:
+        - name: build-workspace
+          workspace: shared-workspace
+    - name: tag-dev
+      taskRef:
+        name: openshift-client
+        kind: ClusterTask
+      runAfter:
+        - s2i-build
+      params:
+        - name: ARGS
+          value: ["tag", "$(params.app-name)-app:latest", "$(params.app-name)-app:dev"]
+    - name: rollout-dev
+      taskRef:
+        name: rollout-restart
+        kind: Task
+      runAfter:
+        - tag-dev
+      params:
+        - name: APP_NAME
+          value: "$(params.app-name)"
+        - name: NAMESPACE
+          value: "gameoflife-dev"
+    - name: tag-test
+      taskRef:
+        name: openshift-client
+        kind: ClusterTask
+      runAfter:
+        - rollout-dev
+      params:
+        - name: ARGS
+          value: ["tag", "$(params.app-name)-app:dev", "$(params.app-name)-app:test"]
+    - name: rollout-test
+      taskRef:
+        name: rollout-restart
+        kind: Task
+      runAfter:
+        - tag-test
+      params:
+        - name: APP_NAME
+          value: "$(params.app-name)"
+        - name: NAMESPACE
+          value: "gameoflife-test"

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: petclinic
+    app.kubernetes.io/component: petclinic
+    app.kubernetes.io/instance: petclinic
+    app.kubernetes.io/part-of: petclinic
+  name: petclinic
+spec:
+  ports:
+  - name: 8080-tcp
+    port: 8080
+  - name: 8443-tcp
+    port: 8443
+  - name: 8778-tcp
+    port: 8778
+  selector:
+    app: petclinic
+    deploymentconfig: petclinic

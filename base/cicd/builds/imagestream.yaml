@@ -1,0 +1,12 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  labels:
+    app.kubernetes.io/name: java
+    app.kubernetes.io/part-of: petclinic
+    app.openshift.io/runtime: java
+    app.openshift.io/runtime-version: openjdk-11-el7
+  name: petclinic
+spec:
+  lookupPolicy:
+    local: false

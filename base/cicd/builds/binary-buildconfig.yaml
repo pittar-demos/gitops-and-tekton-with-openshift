@@ -1,0 +1,30 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    app.kubernetes.io/name: java
+    app.kubernetes.io/part-of: petclinic
+    app.openshift.io/runtime: java
+    app.openshift.io/runtime-version: openjdk-11-el7
+  name: petclinic-binary-build
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: {}
+  output:
+    to:
+      kind: ImageStreamTag
+      name: petclinic:latest
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    binary: {}
+    type: Binary
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: java:openjdk-11-el7
+        namespace: openshift
+    type: Source
+  successfulBuildsHistoryLimit: 5
