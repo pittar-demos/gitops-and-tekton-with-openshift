@@ -10,3 +10,8 @@ spec:
       tls:
         termination: edge
         insecureEdgeTerminationPolicy: Redirect
+  resourceCustomizations: |
+    route.openshift.io/Route:
+      ignoreDifferences: |
+        jsonPointers:
+        - /status/ingress
