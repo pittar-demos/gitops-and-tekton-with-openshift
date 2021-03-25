@@ -1,0 +1,24 @@
+kind: PipelineRun
+apiVersion: tekton.dev/v1beta1
+metadata:
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+    argocd.argoproj.io/sync-options: Prune=false
+  generateName: build-and-rollout-run-
+spec:
+  pipelineRef:
+    name: build-and-rollout
+  params:
+    - name: "git-url"
+      value: "https://github.com/pittar/spring-petclinic.git"
+    - name: "git-revision"
+      value: "master"
+    - name: "app-name"
+      value: "petclinic"
+  workspaces:
+    - name: shared-workspace
+      persistentVolumeClaim:
+        claimName: decisions-workspace
+    - name: maven-settings-cm
+      configMap:
+        name: maven-settings-cm
