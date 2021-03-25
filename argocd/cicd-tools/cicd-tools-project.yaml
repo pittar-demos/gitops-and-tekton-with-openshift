@@ -1,0 +1,16 @@
+kind: AppProject
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: cicd-tools
+  namespace: openshift-gitops
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - namespace: '*'
+      server: '*'
+  orphanedResources:
+    warn: false
+  sourceRepos:
+    - '*'

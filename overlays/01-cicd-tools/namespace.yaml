@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: CI/CD Shared Tools
+    openshift.io/display-name: CI/CD Shared Tools
+  name: cicd-tools
