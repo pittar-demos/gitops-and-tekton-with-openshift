@@ -1,14 +1,14 @@
 kind: Application
 apiVersion: argoproj.io/v1alpha1
 metadata:
-  name: cicd-tools
+  name: petclinic-dev
 spec:
   destination:
-    namespace: cicd-tools
+    namespace: petclinic-dev
     server: https://kubernetes.default.svc
-  project: cicd-tools
+  project: petclinic
   source:
-    path: overlays/01-cicd-tools
+    path: overlays/petclinic/dev
     repoURL: https://github.com/pittar-demos/gitops-and-tekton-with-openshift.git
     targetRevision: main
   syncPolicy:
