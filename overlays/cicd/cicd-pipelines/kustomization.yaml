@@ -5,8 +5,8 @@ namespace: petclinic-cicd
 
 # Commont Tekton functionality.
 bases:
-  - ../../base/cicd/builds
-  - ../../base/cicd/tekton
+  - ../../../base/cicd/builds
+  - ../../../base/cicd/tekton
 
 # Nexus secret (username and password).
 resources:

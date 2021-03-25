@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: petclinic-prod
 
 bases:
-  - ../../base/petclinic
+  - ../../../base/petclinic
 
 resources:
   - namespace.yaml
@@ -12,4 +12,4 @@ resources:
 images:
   - name: petclinic
     newName: image-registry.openshift-image-registry.svc:5000/petclinic-cicd/petclinic
-    newTag: dev
+    newTag: prod
