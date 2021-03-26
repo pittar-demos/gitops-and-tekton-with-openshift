@@ -52,8 +52,24 @@
           </repository>
         </repositories>
       </profile>
+      <profile>
+        <id>sonar</id>
+        <activation>
+          <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+          <sonar.host.url>
+            ${env.SONAR_SERVER_HOST}
+          </sonar.host.url>
+          <sonar.dependencyCheck.jsonReportPath>target/dependency-check-report.json</sonar.dependencyCheck.jsonReportPath>
+          <sonar.java.pmd.reportPaths>target/pmd.xml</sonar.java.pmd.reportPaths>
+          <sonar.java.checkstyle.reportPaths>target/checkstyle-result.xml</sonar.java.checkstyle.reportPaths>
+        </properties>
+      </profile>
     </profiles>
     <activeProfiles>
       <activeProfile>nexus-internal</activeProfile>
+      <activeProfile>sonar</activeProfile>
+      <activeProfile>quality</activeProfile>
     </activeProfiles>
   </settings>
