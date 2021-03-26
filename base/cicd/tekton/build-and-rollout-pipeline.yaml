@@ -60,7 +60,7 @@ spec:
         - name: BUILD_NAME
           value: "$(params.app-name)-binary-build"
         - name: BINARY_PATH
-          value: "/target/app-runner.jar"
+          value: "/target/app.jar"
       workspaces:
         - name: build-workspace
           workspace: shared-workspace
