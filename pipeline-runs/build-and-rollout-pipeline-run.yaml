@@ -12,7 +12,7 @@ spec:
     - name: "git-url"
       value: "https://github.com/pittar/spring-petclinic.git"
     - name: "git-revision"
-      value: "master"
+      value: "gitops-tekton"
     - name: "app-name"
       value: "petclinic"
   workspaces:
