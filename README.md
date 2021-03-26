@@ -46,7 +46,7 @@ This demo is deployed in stage:
 
 6. Accept all defaults by clicking "Install" at the bottom of the screen.
 
-![Operator Install](images/openshift-gitops-install1.png)
+![Operator Install](images/openshift-gitops-install2.png)
 
 
 #### Install using the CLI
