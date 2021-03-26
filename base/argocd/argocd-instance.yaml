@@ -18,3 +18,13 @@ spec:
       ignoreDifferences: |
         jsonPointers:
         - /status/ingress
+  resourceExclusions: |
+    - apiGroups:
+      - tekton.dev
+      kinds:
+      - PipelineRun
+    - apiGroups:
+      - compliance.openshift.io
+      kinds:
+      - ComplianceCheckResult
+      - ComplianceRemediation
