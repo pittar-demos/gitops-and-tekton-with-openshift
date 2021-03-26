@@ -52,7 +52,7 @@ spec:
           workspace: maven-settings-cm
     - name: s2i-build
       taskRef:
-        name: binary-build
+        name: s2i-binary-build
         kind: Task
       runAfter:
         - mvn-build 
