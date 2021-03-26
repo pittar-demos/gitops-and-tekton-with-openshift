@@ -42,11 +42,11 @@ This demo is deployed in stage:
 
 5. Click the "Install" button on the blade that appears to the right.
 
-![Operator Install](images/openshift-gitops-isntall1.png)
+![Operator Install](images/openshift-gitops-install1.png)
 
 6. Accept all defaults by clicking "Install" at the bottom of the screen.
 
-![Operator Install](images/openshift-gitops-isntall1.png)
+![Operator Install](images/openshift-gitops-install1.png)
 
 
 #### Install using the CLI
