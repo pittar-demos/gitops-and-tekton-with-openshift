@@ -9,3 +9,4 @@ resources:
   - petclinicdb-pvc.yaml
   - petclinicdb-secret.yaml
   - petclinicdb-svc.yaml
+  - pipeline-admin-rolebinding.yaml
