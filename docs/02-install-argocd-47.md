@@ -2,7 +2,7 @@
 
 The default "cluster" instance of Argo CD is meant for cluster admin tasks, not for day-to-day application management.  In order to manage our Pet Clinic application, we will install a new instance of Argo CD in a new `argocd` namespace.
 
-If you are logged in with the OpenShift cluster as a `cluster-admin`, you can simply run:
+If you are logged into your OpenShift cluster as a `cluster-admin`, you can simply run:
 
 ```
 oc apply -k https://github.com/pittar-demos/gitops-and-tekton-with-openshift/argocd/argocd?ref=main
