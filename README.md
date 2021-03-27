@@ -12,15 +12,19 @@ The puprose of this demo is to:
 * GitOps repositories to:
     * Create serverless pipelines.
     * Provision and configure application environments (dev/prod)
-* Ability to use notifications from git repository manageres such as Github, GitLab, Bitbucket to trigger new builds.
+* Ability to use notifications from git repository manageres such as Github, GitLab, Bitbucket to trigger new builds. Coming soon!
 * Ability to manually start a build with a "pipeline run" custom resource, or
 * Manually trigger a build with the `tkn` command line tool.
 
 ## What You Will Need
 
-* Cluster Admin access to an OpenShift 4.7+ cluster.  CodeReady Containers should work if given enough resources.
+Cluster Admin access to an OpenShift 4.6+ cluster. This has demo has been tested with:
 
-## Getting Started
+* Red Hat OpenShift Container Platform 4.7
+* Red Hat OpenShift Container Platform 4.6
+* Azure Red Hat OpenShift (OpenShift 4.6)
+
+## What You Will Do
 
 This demo is deployed in stage:
 * Install OpenShift GitOps operator
@@ -28,6 +32,16 @@ This demo is deployed in stage:
 * Use Argo CD to stand up some common tooling (Nexus and SonarQube)
 * Use Argo CD to create pipelines and application environments
 * Kick off a pipeline run!
+
+## Getting Started
+
+Select the version of OpenShift you are using to see how to install the OpenShift GitOps Operator:
+
+* [OpenShift 4.6 (including Azure Red Hat OpenShift)](docs/01-install-gitops-operator-46.md)
+* [OpenShift 4.7 (including CodeReady Containers)](docs/01-install-gitops-operator-47.md)
+
+
+## Ignore everything under here for now :)
 
 ### Install the OpenShift GitOps Operator
 
@@ -81,7 +95,7 @@ oc apply -k https://github.com/pittar-demos/gitops-and-tekton-with-openshift/arg
 
 In just a moment, you will notice a new `argocd` project in your cluster and another instance of Argo CD spinning up in it!
 
-Similarly to the cluster instance, you can login to the Argo CD UI by clicking on the route that becomes available in the `argocd` project.  The default username once again is `admin` and the password can be found in the `argocd-cluster` secret.
+Like the cluster instance, you can login to the Argo CD UI by clicking on the route that becomes available in the `argocd` project.  The default username once again is `admin` and the password can be found in the `argocd-cluster` secret.
 
 Keep the Argo CD UI open so you can see the magic happen during the next few steps!
 
