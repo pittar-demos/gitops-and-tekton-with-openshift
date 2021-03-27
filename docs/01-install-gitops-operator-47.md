@@ -15,7 +15,7 @@ Choose one of the following options.
 
 ![OperatorHub Search](images/operator-hub-search.png)
 
-5. Click the "Install" button on the blade that appears to the right. With OpenShift 4.6, you will be using version **1.0.0** of the OpenShift GitOps operator.
+5. Click the "Install" button on the blade that appears to the right.
 
 ![Operator Install](images/openshift-gitops-install1.png)
 
