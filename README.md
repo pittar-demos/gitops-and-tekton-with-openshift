@@ -38,5 +38,5 @@ This demo is deployed in stage:
 Select the version of OpenShift you are using to see how to install the OpenShift GitOps Operator:
 
 * [OpenShift 4.6 (including Azure Red Hat OpenShift)](docs/01-install-gitops-operator-46.md)
-* [OpenShift 4.7 (including CodeReady Containers)](docs/01-install-gitops-operator-47.md)
+* [OpenShift 4.7](docs/01-install-gitops-operator-47.md)
 
