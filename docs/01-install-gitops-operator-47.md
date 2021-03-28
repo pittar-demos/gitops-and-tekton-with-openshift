@@ -46,4 +46,4 @@ The "cluster" instance of Argo CD is meant for cluster administration, not for "
 
 If you want to see what this default instance of Argo CD looks like, you can find it in the `openshift-gitops` project.  You can access the UI by clicking on the route.  The default username is `admin` and the password can be found in the `argocd-cluster-cluster` secret.
 
-**Next:** [Install Argo CD for Developers](02-install-argocd-47.md)
+**Next:** [Install Argo CD for Developers](02-install-argocd-46.md)
