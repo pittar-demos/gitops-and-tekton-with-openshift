@@ -1,12 +1,12 @@
 kind: Application
 apiVersion: argoproj.io/v1alpha1
 metadata:
-  name: argocd-devs
+  name: argocd-developers
 spec:
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc
-  project: argocd-devs
+  project: argocd-developers
   source:
     path: base/argocd
     repoURL: https://github.com/pittar-demos/gitops-and-tekton-with-openshift.git
