@@ -4,6 +4,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: Prune=false
     argocd.argoproj.io/compare-options: IgnoreExtraneous
+  name: argocd
 spec:
   server:
     insecure: true
