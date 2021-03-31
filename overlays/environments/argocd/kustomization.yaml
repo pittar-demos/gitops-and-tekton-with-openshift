@@ -6,3 +6,5 @@ namespace: argocd
 resources:
   - namespace.yaml
   - openshift-gitops-argocd-admin-rolebinding.yaml
+  - openshift-gitops-argocd-extended-clusterrole.yaml
+  - openshift-gitops-argocd-extended-clusterrolebinding.yaml
