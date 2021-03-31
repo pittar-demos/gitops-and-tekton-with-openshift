@@ -10,7 +10,7 @@ In this step we will create three new Argo CD `Applications`.
 To begin deploying all of this, simply run the following command:
 
 ```
-oc apply -k https://github.com/pittar-demos/gitops-and-tekton-with-openshift/argocd/petclinic?ref=main
+oc apply -k https://github.com/pittar-demos/gitops-and-tekton-with-openshift/gitops/argocd/04-petclinic
 ```
 
 Once that is done, you will see the three new Argo CD `Applications` beginning to synchronize in your Argo CD UI. After a moment or two, the `petclinic-cicd` Appliaction should be healthy and green, but the `petclinic-dev` and `petclinic-prod` Applications will still by trying to progress.  It should looks like this:

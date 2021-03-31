@@ -5,7 +5,8 @@ The default "cluster" instance of Argo CD is meant for cluster admin tasks, not 
 If you are logged into your OpenShift cluster as a `cluster-admin`, you can simply run:
 
 ```
-oc apply -k https://github.com/pittar-demos/gitops-and-tekton-with-openshift/argocd/argocd?ref=main
+oc apply -k https://github.com/pittar-demos/gitops-and-tekton-with-openshift/gitops/argocd/01-environments
+oc apply -k https://github.com/pittar-demos/gitops-and-tekton-with-openshift/gitops/argocd/02-argocd-for-developers
 ```
 
 What we are doing here is using the "cluster" version of Argo CD to deploy another instance of Argo CD for developers to use!  If you have the cluster instance of Argo CD open, you should see an "argocd-devs" `Application` appear and eventually sync.  Once it is healthy and green, the new Argo CD instance in the `argocd` namespace will be ready!
