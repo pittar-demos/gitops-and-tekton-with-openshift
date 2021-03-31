@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: petclinic
   source:
-    path: overlays/04-petclinic/01-cicd
+    path: gitops/overlays/04-petclinic/01-cicd
     repoURL: https://github.com/pittar-demos/gitops-and-tekton-with-openshift.git
     targetRevision: main
   syncPolicy:
