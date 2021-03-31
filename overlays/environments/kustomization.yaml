@@ -3,6 +3,7 @@ kind: Kustomization
 
 bases:
   - argocd
-  - cicd
+  - cicd-tools
+  - petclinic-cicd
   - petclinic-dev
   - petclinic-prod
