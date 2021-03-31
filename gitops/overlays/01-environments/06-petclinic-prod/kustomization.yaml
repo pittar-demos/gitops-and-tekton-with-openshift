@@ -5,7 +5,7 @@ namespace: petclinic-prod
 
 bases:
   - ../../../base/01-environments/01-resourcequota
-  - ../../../base/01-environments/01-cicd-rbac
-  
+  - ../../../base/01-environments/02-cicd-rbac
+
 resources:
   - namespace.yaml
