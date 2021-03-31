@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  annotations:
-    openshift.io/description: Argo CD for Developers
-    openshift.io/display-name: Argo CD for Developers
-  name: argocd

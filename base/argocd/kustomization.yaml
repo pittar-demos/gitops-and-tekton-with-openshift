@@ -4,7 +4,6 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-  - namespace.yaml
   - argocd-instance.yaml
   - developer-argocd-rolebinding.yaml
   - developer-argocd-cluster-admin.yaml
