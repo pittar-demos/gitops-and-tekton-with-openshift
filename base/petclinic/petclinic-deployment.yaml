@@ -45,6 +45,13 @@ spec:
         image: petclinic:latest
         imagePullPolicy: Always
         name: petclinic
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: '1'
+          requests:
+            memory: 512Mi
+            cpu: 250m
         ports:
         - containerPort: 8080
           protocol: TCP
