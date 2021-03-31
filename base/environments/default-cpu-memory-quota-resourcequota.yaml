@@ -5,8 +5,8 @@ metadata:
 spec:
   hard:
     requests.cpu: '2'
-    requests.memory: 1Gi
+    requests.memory: 4Gi
     limits.cpu: '4'
-    limits.memory: 2Gi
+    limits.memory: 4Gi
   scopes:
     - NotTerminating
