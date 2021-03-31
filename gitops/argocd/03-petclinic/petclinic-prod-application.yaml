@@ -1,0 +1,17 @@
+kind: Application
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: petclinic-prod
+spec:
+  destination:
+    namespace: petclinic-prod
+    server: https://kubernetes.default.svc
+  project: petclinic
+  source:
+    path: overlays/04-petclinic/03-prod
+    repoURL: https://github.com/pittar-demos/gitops-and-tekton-with-openshift.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true

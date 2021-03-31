@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: petclinic-dev
+
+bases:
+  - ../../../base/02-petclinic
+
+images:
+  - name: petclinic
+    newName: image-registry.openshift-image-registry.svc:5000/petclinic-cicd/petclinic
+    newTag: dev

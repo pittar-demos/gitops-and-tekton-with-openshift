@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: petclinic-cicd
+
+bases:
+  - 01-rbac
+  - 02-builds
+  - 03-tekton
+  - 04-config

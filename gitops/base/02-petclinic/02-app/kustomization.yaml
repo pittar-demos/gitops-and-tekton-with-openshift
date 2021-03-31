@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - 01-petclinic-deployment.yaml
+  - 02-petclinic-svc.yaml
+  - 03-petclinic-route.yaml
