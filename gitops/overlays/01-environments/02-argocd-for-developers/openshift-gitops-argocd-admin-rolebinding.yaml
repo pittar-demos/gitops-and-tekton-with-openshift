@@ -8,7 +8,4 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: admin
-subjects: 
-  - kind: ServiceAccount
-    name: argocd-cluster-argocd-application-controller
-    namespace: openshift-gitops
+subjects: []
