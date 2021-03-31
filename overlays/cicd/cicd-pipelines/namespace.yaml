@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  annotations:
-    openshift.io/description: Pet Clinic - CI/CD
-    openshift.io/display-name: Pet Clinic - CI/CD
-  name: petclinic-cicd

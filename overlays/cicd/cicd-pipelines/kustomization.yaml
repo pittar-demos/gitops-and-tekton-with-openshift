@@ -10,7 +10,6 @@ bases:
 
 # Nexus secret (username and password).
 resources:
-  - namespace.yaml
   - nexus-secret.yaml
   - cicd-image-puller-rolebinding.yaml
 

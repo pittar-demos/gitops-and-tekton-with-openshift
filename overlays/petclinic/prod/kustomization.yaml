@@ -6,9 +6,6 @@ namespace: petclinic-prod
 bases:
   - ../../../base/petclinic
 
-resources:
-  - namespace.yaml
-
 images:
   - name: petclinic
     newName: image-registry.openshift-image-registry.svc:5000/petclinic-cicd/petclinic
