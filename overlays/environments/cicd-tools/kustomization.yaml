@@ -3,8 +3,5 @@ kind: Kustomization
 
 namespace: cicd-tools
 
-bases:
-  - ../../../base/environments
-
 resources:
   - namespace.yaml

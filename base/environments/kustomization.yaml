@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - developer-argocd-admin.yaml
+  - default-cpu-memory-quota-resourcequota.yaml

@@ -3,8 +3,5 @@ kind: Kustomization
 
 namespace: petclinic-cicd
 
-bases:
-  - ../../../base/environments
-
 resources:
   - namespace.yaml
