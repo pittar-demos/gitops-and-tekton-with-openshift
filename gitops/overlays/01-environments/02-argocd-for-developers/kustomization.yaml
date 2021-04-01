@@ -13,4 +13,4 @@ patchesJson6902:
       version: v1
       kind: RoleBinding
       name: cluster-argocd-application-controller-admin
-    path: openshift-gitops-argocd-admin-rolebinding.yaml
+    path: openshift-gitops-argocd-admin-rolebinding-patch.yaml
