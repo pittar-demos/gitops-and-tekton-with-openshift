@@ -7,3 +7,11 @@ namespace: cicd-tools
 bases:
   - github.com/redhat-canada-gitops/catalog/nexus2/base?ref=master
   - github.com/redhat-canada-gitops/catalog/sonarqube8/overlays/plugins?ref=master
+
+patchesJson6902:
+  - target:
+      group: ""
+      version: v1
+      kind: ResourceQuota
+      name: default-cpu-memory-quota
+    path: quotas-and-limits-patch.yaml
