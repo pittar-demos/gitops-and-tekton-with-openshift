@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: small-cpu-memory-quota
+spec:
+  hard:
+    requests.cpu: '1'
+    requests.memory: 2Gi
+    limits.cpu: '1'
+    limits.memory: 4Gi
+  scopes:
+    - NotTerminating

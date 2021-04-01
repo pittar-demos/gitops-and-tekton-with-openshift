@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: petclinic-cicd
 
 bases:
-  - ../../../base/01-common-environment-config/01-quotas-and-limits
+  - ../../../base/01-common-environment-config/01-quotas-and-limits/01-small
   - ../../../base/01-common-environment-config/02-rbac-argocd
 
 resources:

@@ -2,4 +2,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - 01-default-cpu-memory-quota-resourcequota.yaml
+  - 01-small-cpu-memory-quota-resourcequota.yaml

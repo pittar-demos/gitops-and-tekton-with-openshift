@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: petclinic-dev
 
 bases:
-  - ../../../base/01-common-environment-config/01-quotas-and-limits
+  - ../../../base/01-common-environment-config/01-quotas-and-limits/02-medium
   - ../../../base/01-common-environment-config/03-rbac-pipelines
 
 resources:
