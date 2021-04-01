@@ -4,11 +4,3 @@ kind: Kustomization
 # Nexus secret (username and password).
 resources:
   - 01-cicd-image-puller-rolebinding.yaml
-
-patchesJson6902:
-  - target:
-      group: rbac.authorization.k8s.io
-      version: v1
-      kind: RoleBinding
-      name: cicd-image-puller
-    path: 02-cicd-image-puller-rolebinding-patch.yaml

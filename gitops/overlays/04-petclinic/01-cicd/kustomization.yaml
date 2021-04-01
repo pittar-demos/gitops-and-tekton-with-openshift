@@ -8,3 +8,11 @@ bases:
   - 02-builds
   - 03-tekton
   - 04-config
+
+patchesJson6902:
+  - target:
+      group: rbac.authorization.k8s.io
+      version: v1
+      kind: RoleBinding
+      name: cicd-image-puller
+    path: cicd-image-puller-rolebinding-patch.yaml
