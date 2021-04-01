@@ -4,8 +4,8 @@ kind: Kustomization
 namespace: petclinic-dev
 
 bases:
-  - ../../../base/01-environments/01-resourcequota
-  - ../../../base/01-environments/02-cicd-rbac
+  - ../../../base/01-common-environment-config/01-quotas-and-limits
+  - ../../../base/01-common-environment-config/03-rbac-pipelines
 
 resources:
   - namespace.yaml

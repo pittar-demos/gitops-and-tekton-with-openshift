@@ -3,4 +3,3 @@ kind: Kustomization
 
 resources:
   - 01-argocd-developer-admin-rolebinding.yaml
-  - 02-pipeline-admin-rolebinding.yaml
