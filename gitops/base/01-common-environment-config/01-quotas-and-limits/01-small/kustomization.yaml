@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - 01-small-cpu-memory-quota-resourcequota.yaml
+  - 02-small-limit-range.yaml
