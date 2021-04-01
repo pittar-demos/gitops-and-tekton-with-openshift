@@ -5,6 +5,7 @@ namespace: cicd-tools
 
 bases:
   - ../../../base/01-environments/01-resourcequota
+  - ../../../base/01-environments/02-cicd-rbac
 
 resources:
   - namespace.yaml
