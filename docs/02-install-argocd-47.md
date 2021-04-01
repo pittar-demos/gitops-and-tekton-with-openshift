@@ -5,7 +5,11 @@ The default "cluster" instance of Argo CD is meant for cluster admin tasks, not 
 If you are logged into your OpenShift cluster as a `cluster-admin`, you can simply run:
 
 ```
+# Create all projects/namespaces and RBAC for this demo, including the namespace
+# for the developer instance of Argo CD.
 oc apply -k https://github.com/pittar-demos/gitops-and-tekton-with-openshift/gitops/argocd/01-environments
+
+# Create the developer instance of Argo CD.
 oc apply -k https://github.com/pittar-demos/gitops-and-tekton-with-openshift/gitops/argocd/02-argocd-for-developers
 ```
 

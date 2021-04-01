@@ -5,7 +5,7 @@ Finally, it's time to use OpenShift Pipelines!
 To trigger a new build, simply run the following command:
 
 ```
-oc create -f https://raw.githubusercontent.com/pittar-demos/gitops-and-tekton-with-openshift/main/pipeline-runs/build-and-rollout-pipeline-run.yaml -n petclinic-cicd
+oc create -f https://raw.githubusercontent.com/pittar-demos/gitops-and-tekton-with-openshift/main/gitops/pipeline-run/build-and-rollout-pipeline-run.yaml -n petclinic-cicd
 ```
 
 Now, if you switch over to the `petclinic-cicd` project in the OpenShift UI and select "Pipelines" from the left menu, you should see your first pipeline run progressing!  If you click on the pipeline run link, you will see the different tasks in the pipeline and their progress, like this:
