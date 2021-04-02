@@ -2,7 +2,7 @@
 
 Finally, it's time to use OpenShift Pipelines!
 
-To trigger a new build, simply run the following command:
+To trigger a new build, run the following command:
 
 ```
 oc create -f https://raw.githubusercontent.com/pittar-demos/gitops-and-tekton-with-openshift/main/gitops/pipeline-run/build-and-rollout-pipeline-run.yaml -n petclinic-cicd
@@ -21,9 +21,9 @@ This pipeline has a number of steps, including:
 * Tag the image as `:prod`.
 * Deploy (rollout) the new image to the **prod** environment.
 
-Once the image has been successfully built and rolled out to **dev** and **prod**, you will notice the corresponding Argo CD `Applications` will finally finish progressing and everything should be in sync and healthy!  If not, you can manually trigger a sync on each application (although, this should resolve itself automatically within 3 minutes).
+Once the image has been successfully built and rolled out to **dev** and **prod**, you will notice the corresponding Argo CD *Applications* will finally finish progressing and everything should be in sync and healthy!  If not, you can manually trigger a sync on each application (although, this should resolve itself automatically within 3 minutes).
 
-You can now take a look in both the `petclinic-dev` and `petclinic-prod` OpenShift projects to see the application deployed successfully (along with MySQL databases).  You can test out each app by clicking on their respective routes and trying to add and search for pet owners.
+You can now take a look in both the `petclinic-dev` and `petclinic-prod` OpenShift projects to see that the application has been deployed successfully (along with MySQL databases).  You can test out each app by clicking on their respective routes and trying to add and search for pet owners.
 
 If you swith to the `cicd-tools` project and open the SonarQube link, you will see that a project has been analyzed.
 
@@ -44,4 +44,4 @@ You can now see the results of the code and CVE analysis that was performed as p
 
 ## Wrapping It All Up
 
-As you can see, GitOps processes combined with Serverless CI can be a very powerful one-two punch.  Not only do you get the incredible consistency of having your application environments and CI pipelines versioned in git, you also have a built-in audit trail (git history) and the piece of mind knownig that your entire environment, your CI/CD tooling, and your pipelines can be quickly, consistently and easily replicated in *any* data centre!
+As you can see, GitOps processes combined with Serverless CI can be a very powerful one-two punch.  Not only do you get the incredible consistency of having your application environments and CI pipelines versioned in git, you also have a built-in audit trail (git history) and the piece of mind knownig that your entire environment, your CI/CD tooling, and your pipelines can be quickly, consistently and easily be replicated in *any* data centre!

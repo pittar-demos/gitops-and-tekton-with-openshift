@@ -10,7 +10,7 @@ To do this, run the following command:
 oc apply -k https://github.com/pittar-demos/gitops-and-tekton-with-openshift/gitops/argocd/03-cicd-tools
 ```
 
-In the developer instance of Argo CD you will see a new `Application` appear and begin to sync. You can take a look in your cluster at the new `cicd-tools` project to see Nexus and SonarQube spinning up.  Wait until they are both ready (dark blue circles) before continuing.
+In the developer instance of Argo CD you will see a new *Application* appear and begin to sync. You can take a look in your cluster at the new `cicd-tools` project to see Nexus and SonarQube spinning up.  Wait until they are both ready (dark blue circles) before continuing.
 
 Although you don't need to login to Nexus or SonarQube for this demo, if you would like to look around, the default credentials are as follows:
 

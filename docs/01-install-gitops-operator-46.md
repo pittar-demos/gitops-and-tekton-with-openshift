@@ -32,7 +32,7 @@ Alternatly, you can install the OpenShift GitOps operator from the command line.
 2. Run the following command:
 
 ```
-oc apply -k https://github.com/redhat-canada-gitops/catalog/openshift-gitops-operator/overlays/preview-4.6?ref=master
+oc apply -k https://github.com/redhat-canada-gitops/catalog/openshift-gitops-operator/overlays/preview-4.6
 ```
 
 ## What Gets Installed?
