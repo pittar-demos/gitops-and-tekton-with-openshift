@@ -4,9 +4,9 @@ metadata:
   name: medium-cpu-memory-quota
 spec:
   hard:
-    requests.cpu: '2'
-    requests.memory: 4Gi
-    limits.cpu: '4'
-    limits.memory: 6Gi
+    requests.cpu: '1'
+    requests.memory: 2Gi
+    limits.cpu: '2'
+    limits.memory: 2Gi
   scopes:
     - NotTerminating

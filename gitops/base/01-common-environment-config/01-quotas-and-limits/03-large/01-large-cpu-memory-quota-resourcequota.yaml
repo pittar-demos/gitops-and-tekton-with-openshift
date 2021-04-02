@@ -4,9 +4,9 @@ metadata:
   name: large-cpu-memory-quota
 spec:
   hard:
-    requests.cpu: '4'
-    requests.memory: 6Gi
+    requests.cpu: '2'
+    requests.memory: 4Gi
     limits.cpu: '6'
-    limits.memory: 8Gi
+    limits.memory: 6Gi
   scopes:
     - NotTerminating

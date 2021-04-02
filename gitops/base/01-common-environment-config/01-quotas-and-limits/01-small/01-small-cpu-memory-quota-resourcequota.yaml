@@ -4,9 +4,9 @@ metadata:
   name: small-cpu-memory-quota
 spec:
   hard:
-    requests.cpu: '1'
-    requests.memory: 2Gi
+    requests.cpu: 500m
+    requests.memory: 1Gi
     limits.cpu: '1'
-    limits.memory: 4Gi
+    limits.memory: 2Gi
   scopes:
     - NotTerminating
