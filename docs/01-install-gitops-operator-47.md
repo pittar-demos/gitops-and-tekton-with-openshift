@@ -50,4 +50,4 @@ If you want to see what this default instance of Argo CD looks like, you can fin
 
 The default username is `admin` and the password can be found in the `argocd-cluster-cluster` secret in the `openshift-gitops` namespace.
 
-**Next:** [Install Argo CD for Developers](02-install-argocd-47.md)
+**Next:** [Install Argo CD for Developers](02-install-argocd.md)
