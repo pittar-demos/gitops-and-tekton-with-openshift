@@ -4,17 +4,16 @@
 
 The puprose of this demo is to:
 
-* Stand up some shared CI/CD infrastructure in an OpenShift cluster, such as:
+* Deploy shared CI/CD infrastructure in an OpenShift cluster, such as:
     * Sonatype Nexus - Maven artefact repository.
     * SonarQube - Static code analysis and CVE reporting.
     * Argo CD - GitOps lifecycle management, provided by OpenShift GitOps.
     * Tekton - Serverless CI/CD, provided by OpenShift Pipelines.
-* GitOps repositories to:
+* Use GitOps repositories to:
     * Create serverless pipelines.
     * Provision and configure application environments (dev/prod)
-* Ability to use notifications from git repository manageres such as Github, GitLab, Bitbucket to trigger new builds. Coming soon!
-* Ability to manually start a build with a "pipeline run" custom resource, or
-* Manually trigger a build with the `tkn` command line tool.
+* Demonstrate the ability to use notifications from git repository manageres such as Github, GitLab, Bitbucket to trigger new builds. Coming soon!
+* Manually start a build with a "pipeline run" custom resource.
 
 ## What You Will Need
 
@@ -26,11 +25,14 @@ Cluster Admin access to an OpenShift 4.6+ cluster. This has demo has been tested
 
 ## What You Will Do
 
-This demo is deployed in stage:
-* Install OpenShift GitOps operator
-* Use the default Argo CD instance in the `openshift-gitops` namespace to deploy a "Developers" Argo CD instance.
-* Use Argo CD to stand up some common tooling (Nexus and SonarQube)
-* Use Argo CD to create pipelines and application environments
+This demo is deployed in stages:
+* Install OpenShift GitOps operator.
+* Use the default Argo CD instance in the `openshift-gitops` namespace to:
+    * Create the projects/namespaces required for the dmoe.
+    * Configure RBAC for pipelines and Argo CD.
+    * Deploy an Argo CD instance for Developers to use.
+* Use Developers Argo CD to deploy common tooling (Nexus and SonarQube)
+* Use Developers Argo CD to create pipelines and application configuration.
 * Kick off a pipeline run!
 
 ## Getting Started
