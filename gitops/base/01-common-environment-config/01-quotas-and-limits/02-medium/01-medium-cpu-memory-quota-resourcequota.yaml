@@ -6,7 +6,7 @@ spec:
   hard:
     requests.cpu: '1'
     requests.memory: 2Gi
-    limits.cpu: '4'
+    limits.cpu: '3'
     limits.memory: 2Gi
   scopes:
     - NotTerminating
