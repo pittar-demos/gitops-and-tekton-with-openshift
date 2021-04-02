@@ -27,7 +27,11 @@ If you have the UI for the cluster instance of Argo CD open, you should see "arg
 
 ![Cluster Argo CD deploying the Developer instance of Argo CD](images/cluster-argocd.png)
 
-Like the cluster instance, you can login to the Developers Argo CD UI by clicking on the route that becomes available in the `argocd` project.  The default username once again is `admin` and the password can be found in the `argocd-cluster` secret.
+Like the cluster instance, you can login to the Developers Argo CD UI by clicking on the route that becomes available in the `argocd` project.  The default username once again is `admin` and the password can be found in the `argocd-cluster` secret. You can also get the password using the `oc` cli:
+
+```
+oc get secret argocd-cluster -n argocd -o jsonpath='{.data.admin\.password}' | base64 -d
+```
 
 Keep the Argo CD UI open so you can see the magic happen during the next few steps!
 
