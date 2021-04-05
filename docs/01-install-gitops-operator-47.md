@@ -26,7 +26,7 @@ Choose one of the following options.
 
 ## Install Using the CLI
 
-Alternatly, you can install the OpenShift GitOps operator from the command line.
+Alternatively, you can install the OpenShift GitOps operator from the command line.
 
 1. Using the `oc` command line interface, login to your cluster as a *cluster admin*.
 2. Run the following command:

@@ -25,7 +25,7 @@ Once the image has been successfully built and rolled out to **dev** and **prod*
 
 You can now take a look in both the `petclinic-dev` and `petclinic-prod` OpenShift projects to see that the application has been deployed successfully (along with MySQL databases).  You can test out each app by clicking on their respective routes and trying to add and search for pet owners.
 
-If you swith to the `cicd-tools` project and open the SonarQube link, you will see that a project has been analyzed.
+If you switch to the `cicd-tools` project and open the SonarQube link, you will see that a project has been analyzed.
 
 ![CI/CD SonarQube](images/cicd-tools-sonarqube.png)
 
@@ -44,4 +44,4 @@ You can now see the results of the code and CVE analysis that was performed as p
 
 ## Wrapping It All Up
 
-As you can see, GitOps processes combined with Serverless CI can be a very powerful one-two punch.  Not only do you get the incredible consistency of having your application environments and CI pipelines versioned in git, you also have a built-in audit trail (git history) and the piece of mind knownig that your entire environment, your CI/CD tooling, and your pipelines can be quickly, consistently and easily be replicated in *any* data centre!
+As you can see, GitOps processes combined with Serverless CI can be a very powerful one-two punch.  Not only do you get the incredible consistency of having your application environments and CI pipelines versioned in git, you also have a built-in audit trail (git history) and the piece of mind knowing that your entire environment, your CI/CD tooling, and your pipelines can be quickly, consistently and easily be replicated in *any* data centre!
