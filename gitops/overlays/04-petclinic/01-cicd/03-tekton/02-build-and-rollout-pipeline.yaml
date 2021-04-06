@@ -42,7 +42,7 @@ spec:
         - fetch-repository 
       params:
         - name: GOALS
-          value: ["clean", "deploy"]
+          value: ["clean", "deploy", "sonar:sonar"]
         - name: MAVEN_REPO_CONFIG_SECRET
           value: nexus-secret
       workspaces:
