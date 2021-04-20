@@ -3,6 +3,7 @@
 The default "cluster" instance of Argo CD is meant for cluster admin tasks (such as creating new namespaces, managing role bindings, etc.), not for day-to-day application management.  In order to manage our Pet Clinic application, we will install a new instance of Argo CD in a new `argocd` namespace for Developers to use.
 
 However, we first need to create the projects/namespaces that we will use in this demo.  They are:
+
 * **argocd** - The namespace where the new Argo CD instance will be deployed.
 * **cicd-tools** - The namespace for the shared CI tools (Nexus and SonarQube).
 * **petclinic-cicd** _ The namespace where Pet Clinic `BuildConfig`, `ImageStream`, `Task` and `Pipeline` resources will reside.
@@ -12,7 +13,7 @@ However, we first need to create the projects/namespaces that we will use in thi
 To put all this in place, we will create a new *AppProject* and *Application* in the `openshift-gitops` Argo CD instance to manage these environments.  You can do this by executing the following command:
 
 ```
-oc apply -k https://github.com/pittar-demos/gitops-and-tekton-with-openshift/gitops/argocd/01-environments
+oc apply -k https://github.com/pittar-demos/gitops-and-tekton-with-openshift/gitops/argocd/01-environments/00-preview
 ```
 
 Once the environments *Application* is synchronized and healthy, you can execute the next command to create an *Application* to deploy and manage the Developer instance of Argo CD:
@@ -27,7 +28,11 @@ If you have the UI for the cluster instance of Argo CD open, you should see "arg
 
 ![Cluster Argo CD deploying the Developer instance of Argo CD](images/cluster-argocd.png)
 
-Like the cluster instance, you can login to the Developers Argo CD UI by clicking on the route that becomes available in the `argocd` project.  The default username once again is `admin` and the password can be found in the `argocd-cluster` secret.
+Like the cluster instance, you can login to the Developers Argo CD UI by clicking on the route that becomes available in the `argocd` project.  The default username once again is `admin` and the password can be found in the `argocd-cluster` secret. You can also get the password using the `oc` cli:
+
+```
+oc get secret argocd-cluster -n argocd -o jsonpath='{.data.admin\.password}' | base64 -d
+```
 
 Keep the Argo CD UI open so you can see the magic happen during the next few steps!
 

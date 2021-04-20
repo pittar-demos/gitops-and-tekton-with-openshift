@@ -32,7 +32,7 @@ Alternatively, you can install the OpenShift GitOps operator from the command li
 2. Run the following command:
 
 ```
-oc apply -k https://github.com/redhat-canada-gitops/catalog/openshift-gitops-operator/overlays/preview-4.7
+oc apply -k https://github.com/redhat-canada-gitops/catalog/openshift-gitops-operator/overlays/stable-4.7
 ```
 
 ## What Gets Installed?
@@ -54,4 +54,4 @@ The default username is `admin` and the password can be found in the `argocd-clu
 oc get secret argocd-cluster-cluster -n openshift-gitops -o jsonpath='{.data.admin\.password}' | base64 -d
 ```
 
-**Next:** [Install Argo CD for Developers](02-install-argocd.md)
+**Next:** [Install Argo CD for Developers](02-install-argocd-47.md)

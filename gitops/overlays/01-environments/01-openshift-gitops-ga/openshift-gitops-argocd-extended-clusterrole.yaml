@@ -1,0 +1,14 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=false
+  name: openshift-gitops-argocd-extended-clusterrole
+rules:
+  - apiGroups:
+    - ""
+    resources:
+      - resourcequotas
+      - limitranges
+    verbs:
+      - '*'

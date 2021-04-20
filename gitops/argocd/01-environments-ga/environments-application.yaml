@@ -1,0 +1,17 @@
+kind: Application
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: environments
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: environments
+  source:
+    path: gitops/overlays/01-environments/00-ga
+    repoURL: https://github.com/pittar-demos/gitops-and-tekton-with-openshift.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true

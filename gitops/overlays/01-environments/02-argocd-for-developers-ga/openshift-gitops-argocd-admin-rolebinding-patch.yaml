@@ -1,0 +1,6 @@
+- op: add
+  path: /subjects/-
+  value:
+    kind: ServiceAccount
+    name: openshift-gitops-argocd-application-controller
+    namespace: openshift-gitops
