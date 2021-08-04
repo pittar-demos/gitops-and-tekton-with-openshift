@@ -4,4 +4,6 @@ metadata:
   annotations:
     openshift.io/description: Pet Clinic - DEV
     openshift.io/display-name: Pet Clinic - DEV
+  labels:
+    argocd.argoproj.io/managed-by: argocd
   name: petclinic-dev
