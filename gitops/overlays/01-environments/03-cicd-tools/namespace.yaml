@@ -4,4 +4,6 @@ metadata:
   annotations:
     openshift.io/description: CI/CD Shared Tools
     openshift.io/display-name: CI/CD Shared Tools
+  labels:
+    argocd.argoproj.io/managed-by: argocd
   name: cicd-tools
