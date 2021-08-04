@@ -4,4 +4,6 @@ metadata:
   annotations:
     openshift.io/description: Pet Cinic CI/CD
     openshift.io/display-name: Pet Clinic CI/CD
+  labels:
+    argocd.argoproj.io/managed-by: argocd
   name: petclinic-cicd
