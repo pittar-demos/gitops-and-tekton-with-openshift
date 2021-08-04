@@ -23,6 +23,7 @@ Choose one of the following options.
 
 ![Operator Install](images/openshift-gitops-install2.png)
 
+7. Repeat steps 3-6 for "OpenShift Pipelines".  The OpenShift Pipelines operator is no longer installed automatically when OpenShift GitOps is installed.
 
 ## Install Using the CLI
 
