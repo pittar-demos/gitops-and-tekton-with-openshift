@@ -4,4 +4,6 @@ metadata:
   annotations:
     openshift.io/description: Argo CD for Developers
     openshift.io/display-name: Argo CD for Developers
+  labels:
+    argocd.argoproj.io/managed-by: argocd
   name: argocd
