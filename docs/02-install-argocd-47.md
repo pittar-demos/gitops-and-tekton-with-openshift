@@ -22,16 +22,17 @@ Once the environments *Application* is synchronized and healthy, you can execute
 oc apply -k https://github.com/pittar-demos/gitops-and-tekton-with-openshift/gitops/argocd/02-argocd-for-developers
 ```
 
-If you have the UI for the cluster instance of Argo CD open, you should see "argocd-devs" and "environments" *Applications*.  Once they are both healthy and green, the new Argo CD instance in the `argocd` namespace will be ready!
-
-**Note:** If you are using OpenShift 4.6 the Argo CD application will remain "Out of Sync".  This is ok!  This is due to the fact that OpenShift 4.6 is using an older version of Argo CD.  This "Out of Sync" status does not happen in OpenShift 4.7 (OpenShift GitOps 1.0.1).  Remember, OpenShift GitOps is still *Tech Preview*, so there are still a few rough edges :)
+If you have the UI for the cluster instance of Argo CD open, you should see "argocd-developers" and "environments" *Applications*.  Once they are both healthy and green, the new Argo CD instance in the `argocd` namespace will be ready!
 
 ![Cluster Argo CD deploying the Developer instance of Argo CD](images/cluster-argocd.png)
 
 Like the cluster instance, you can login to the Developers Argo CD UI by clicking on the route that becomes available in the `argocd` project.  The default username once again is `admin` and the password can be found in the `argocd-cluster` secret. You can also get the password using the `oc` cli:
 
 ```
-oc get secret argocd-cluster -n argocd -o jsonpath='{.data.admin\.password}' | base64 -d
+oc get secret argocd-cluster \
+    -n argocd \
+    -o jsonpath='{.data.admin\.password}' \
+    | base64 -d
 ```
 
 Keep the Argo CD UI open so you can see the magic happen during the next few steps!
