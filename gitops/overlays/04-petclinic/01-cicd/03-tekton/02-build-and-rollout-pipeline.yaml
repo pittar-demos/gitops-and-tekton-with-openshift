@@ -72,7 +72,7 @@ spec:
         - s2i-build
       params:
         - name: ARGS
-          value: ["tag", "$(params.app-name):latest", "$(params.app-name):dev"]
+          value: "oc tag $(params.app-name):latest $(params.app-name):dev"
     - name: rollout-dev
       taskRef:
         name: rollout-restart
@@ -91,8 +91,8 @@ spec:
       runAfter:
         - rollout-dev
       params:
-        - name: ARGS
-          value: ["tag", "$(params.app-name):dev", "$(params.app-name):prod"]
+        - name: SCRIPT
+          value: "oc tag $(params.app-name):dev $(params.app-name):prod"
     - name: rollout-prod
       taskRef:
         name: rollout-restart
