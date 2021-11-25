@@ -2,9 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 bases:
-  - github.com/redhat-cop/gitops-catalog/openshift-pipelines-tasks/rollout-restart/base?ref=master
-  - github.com/redhat-cop/gitops-catalog/openshift-pipelines-tasks/maven/base?ref=master
-  - github.com/redhat-cop/gitops-catalog/openshift-pipelines-tasks/s2i-binary-build/base?ref=master
+  - github.com/redhat-cop/gitops-catalog/openshift-pipelines-tasks/rollout-restart/base?ref=main
+  - github.com/redhat-cop/gitops-catalog/openshift-pipelines-tasks/maven/base?ref=main
+  - github.com/redhat-cop/gitops-catalog/openshift-pipelines-tasks/s2i-binary-build/base?ref=main
 
 resources:
   - 01-workspace-pvc.yaml

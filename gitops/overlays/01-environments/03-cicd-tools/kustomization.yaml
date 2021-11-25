@@ -3,8 +3,5 @@ kind: Kustomization
 
 namespace: cicd-tools
 
-bases:
-  - ../../../base/01-common-environment-config/02-rbac-argocd
-
 resources:
   - namespace.yaml
