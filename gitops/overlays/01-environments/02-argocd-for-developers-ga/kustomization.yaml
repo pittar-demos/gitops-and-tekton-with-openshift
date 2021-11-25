@@ -5,7 +5,6 @@ namespace: argocd
 
 resources:
   - namespace.yaml
-  - openshift-gitops-argocd-admin-rolebinding.yaml
 
 patchesJson6902:
   - target:

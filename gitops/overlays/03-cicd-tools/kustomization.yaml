@@ -5,5 +5,5 @@ namespace: cicd-tools
 
 # Deploy pre-configured SonarQube and Nexus from Red Hat Canada demo catalog.
 bases:
-  - github.com/redhat-canada-gitops/catalog/nexus2/base?ref=master
-  - github.com/redhat-canada-gitops/catalog/sonarqube8/overlays/plugins?ref=master
+  - github.com/redhat-cop/gitops-catalog/catalog/nexus2/base?ref=main
+  - github.com/redhat-cop/gitops-catalog/sonarqube8/overlays/plugins?ref=main
