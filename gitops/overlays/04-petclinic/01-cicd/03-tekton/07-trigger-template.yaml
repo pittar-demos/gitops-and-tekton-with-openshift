@@ -8,6 +8,8 @@ spec:
   params:
     - name: git-repo-name
       description: The name of the deployment to be created / patched
+    - name: gitrepositoryurl
+      description: The git repository url
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
