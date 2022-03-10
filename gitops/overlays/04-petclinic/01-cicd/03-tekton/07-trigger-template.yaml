@@ -22,7 +22,7 @@ spec:
           name: build-and-rollout
         params:
           - name: "git-url"
-            value: "http://developer:openshift@gitea.scm.svc.cluster.local:3000/developer/spring-petclinic.git"
+            value: "$(tt.params.gitrepositoryurl)"
           - name: "git-revision"
             value: "main"
           - name: "app-name"

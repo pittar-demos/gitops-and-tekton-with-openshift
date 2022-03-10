@@ -8,3 +8,5 @@ spec:
   params:
   - name: git-repo-name
     value: $(body.repository.name)
+  - name: gitrepositoryurl
+    value: $(body.repository.url)
