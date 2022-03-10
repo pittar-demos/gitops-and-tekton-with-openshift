@@ -9,3 +9,8 @@ bases:
 resources:
   - 01-workspace-pvc.yaml
   - 02-build-and-rollout-pipeline.yaml
+  - 03-eventlistener.yaml
+  - 04-trigger-route.yaml
+  - 05-trigger.yaml
+  - 06-trigger-binding.yaml
+  - 07-trigger-template.yaml

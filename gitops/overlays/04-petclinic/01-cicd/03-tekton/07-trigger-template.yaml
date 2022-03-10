@@ -1,0 +1,36 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerTemplate
+metadata:
+  name: build-trigger
+  annotations:
+    argocd.argoproj.io/sync-wave: "6"
+spec:
+  params:
+    - name: git-repo-name
+      description: The name of the deployment to be created / patched
+  resourcetemplates:
+    - apiVersion: tekton.dev/v1beta1
+      kind: PipelineRun
+      metadata:
+        generateName:  build-and-rollout-pipeline-run-
+        annotations:
+          argocd.argoproj.io/compare-options: IgnoreExtraneous
+          argocd.argoproj.io/sync-options: Prune=false
+      spec:
+        serviceAccountName: pipeline
+        pipelineRef:
+          name: build-and-rollout
+        params:
+          - name: "git-url"
+            value: "http://developer:openshift@gitea.scm.svc.cluster.local:3000/developer/spring-petclinic.git"
+          - name: "git-revision"
+            value: "main"
+          - name: "app-name"
+            value: "petclinic"
+        workspaces:
+          - name: shared-workspace
+            persistentVolumeClaim:
+              claimName: workspace
+          - name: maven-settings-cm
+            configMap:
+              name: maven-settings-cm
