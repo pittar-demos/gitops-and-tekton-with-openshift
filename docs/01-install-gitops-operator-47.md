@@ -33,15 +33,22 @@ Alternatively, you can install the OpenShift GitOps operator from the command li
 2. Run the following command:
 
 ```
-oc apply -k 
-https://github.com/redhat-cop/gitops-catalog/openshift-gitops-operator/overlays/stable
+oc apply -k https://github.com/redhat-cop/gitops-catalog/openshift-gitops-operator/overlays/stable
+```
+
+## Install OpenShift Pipelines
+
+Next, install the OpenShift Pipelines operator.  You can use the OpenShift Admin UI in a similar manner to find and install the **OpenShift Pipelines** operator from OperatorHub, or you can run the following command to install the operator from the command line:
+
+```
+oc apply -k https://github.com/redhat-cop/gitops-catalog/openshift-pipelines-operator/overlays/stable
 ```
 
 ## What Gets Installed?
 
-When the Red Hat OpenShift GitOps operator is installed, it will automatically do two things:
+When the Red Hat OpenShift GitOps and OpenShift Piplines operators are installed, you will have two things:
 
-1. It will also install the latest stable version of OpenShift Pipelines (Tekton).
+1. The latest stable version of OpenShift Pipelines (Tekton).
 2. A "cluster" instance of Argo CD in the `openshift-gitops` namespace.
 
 The "cluster" instance of Argo CD is meant for cluster administration, not for "developers" to use.  However, it can be used to create new namespaces and grant permissions to other Argo CD instances!
