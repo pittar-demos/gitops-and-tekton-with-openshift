@@ -12,21 +12,23 @@ The puprose of this demo is to:
 * Use GitOps repositories to:
     * Create serverless pipelines.
     * Provision and configure application environments (dev/prod)
-* Demonstrate the ability to use notifications from git repository managers such as Github, GitLab, Bitbucket to trigger new builds. Coming soon!
+* Demonstrate the ability to use notifications from git repository managers such as Gitea, Github, GitLab, Bitbucket to trigger new builds.
 * Manually start a build with a "pipeline run" custom resource.
 
 ## What You Will Need
 
-Cluster Admin access to an OpenShift 4.6+ cluster. This has demo has been tested with:
+Cluster Admin access to an OpenShift 4.9+ cluster. This has demo has been tested with:
 
-* Red Hat OpenShift Container Platform 4.7
-* Red Hat OpenShift Container Platform 4.6
-* Azure Red Hat OpenShift (OpenShift 4.6)
+* Red Hat OpenShift Container Platform 4.9
+* Red Hat OpenShift Container Platform 4.10
+* Azure Red Hat OpenShift (OpenShift 4.9)
 
 ## What You Will Do
 
 This demo is deployed in stages:
 * Install OpenShift GitOps operator.
+* Install Gitea Operator and instance.
+* Install OpenShift Pipelines Operator.
 * Use the default Argo CD instance in the `openshift-gitops` namespace to:
     * Create the projects/namespaces required for the demo.
     * Configure RBAC for pipelines and Argo CD.
@@ -39,5 +41,5 @@ This demo is deployed in stages:
 
 Select the version of OpenShift you are using to see how to install the OpenShift GitOps Operator:
 
-* [OpenShift 4.7+](docs/01-install-gitops-operator-47.md)
+* **Next: ** [Initial Demo Setup](docs/01-initial-setup.md)
 
